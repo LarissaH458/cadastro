@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos Voluntários</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #successMessage {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Cadastro de Alunos Voluntários</h1>
+
+    <!-- Mensagem de sucesso -->
+    <div id="successMessage">
+        Cadastro realizado com sucesso!
+    </div>
+
+    <form id="cadastroForm">
+        <label for="nome">Nome do Aluno:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" placeholder="Digite sua idade" required>
+
+        <label for="serie">Série:</label>
+        <input type="text" id="serie" name="serie" placeholder="Digite sua série" required>
+
+        <label for="contato">Contato:</label>
+        <input type="text" id="contato" name="contato" placeholder="Digite seu contato" required>
+
+        <label for="atividades">Atividades que gostaria de realizar:</label>
+        <select id="atividades" name="atividades" required>
+            <option value="">Selecione uma atividade</option>
+            <option value="Cultivar Alimentos">Cultivar Alimentos</option>
+            <option value="Produzir Refeições">Produzir Refeições</option>
+            <option value="Distribuir Refeições">Distribuir Refeições</option>
+        </select>
+
+        <label for="observacoes">Observações:</label>
+        <textarea id="observacoes" name="observacoes" placeholder="Observações adicionais..."></textarea>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <script>
+        // Captura o formulário
+        const form = document.getElementById('cadastroForm');
+        const successMessage = document.getElementById('successMessage');
+
+        // Adiciona um listener para o evento de envio do formulário
+        form.addEventListener('submit', function(event) {
+            // Impede o envio do formulário
+            event.preventDefault();
+
+            // Exibe a mensagem de sucesso
+            successMessage.style.display = 'block';
+
+            // Opcional: limpar os campos do formulário
+            form.reset();
+        });
+    </script>
+
+</body>
+</html>
